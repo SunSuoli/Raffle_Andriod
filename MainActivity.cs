@@ -18,7 +18,7 @@ namespace Raffle_Andriod
 
             UDP udp = new UDP();
             Enthernet e = new Enthernet();
-            udp.UDP_Open(e.GetLocalIp(),11066);
+            udp.UDP_Open(e.GetLocalIp(),11067);
 
             Button start = FindViewById<Button>(Resource.Id.start);
             start.Click += (sender, e) =>
@@ -33,7 +33,7 @@ namespace Raffle_Andriod
             Button restart = FindViewById<Button>(Resource.Id.restart);
             restart.Click += (sender, e) =>
             {
-                udp.UDP_Write("restart", "255.255.255.255", 11066);//向UDP发送“restart”
+                udp.UDP_Write("init", "255.255.255.255", 11066);//向UDP发送“restart”
             };
         }
 
